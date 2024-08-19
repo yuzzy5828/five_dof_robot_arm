@@ -1,0 +1,8 @@
+# Default initial positions for five_dof_robot_arm's ros2_control fake system
+
+initial_positions:
+  Revolute 18: 0
+  Revolute 19: 0
+  Revolute 21: 0
+  Revolute 34: 0
+  Revolute 35: 0

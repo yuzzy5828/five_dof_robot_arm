@@ -1,0 +1,200 @@
+<?xml version="1.0" ?>
+<robot name="five_dof_robot_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find five_dof_robot_arm_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find five_dof_robot_arm_description)/urdf/five_dof_robot_arm.trans" />
+<xacro:include filename="$(find five_dof_robot_arm_description)/urdf/five_dof_robot_arm.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.00039944618987229174 -0.00022679502558283884 0.02557811537278175" rpy="0 0 0"/>
+    <mass value="0.7233661769499682"/>
+    <inertia ixx="0.000878" iyy="0.000958" izz="0.001522" ixy="0.0" iyz="-0.0" ixz="-1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rotate_link_1">
+  <inertial>
+    <origin xyz="0.0070578292154109806 -2.6117230101140867e-05 0.01942324197942242" rpy="0 0 0"/>
+    <mass value="0.7043175850391777"/>
+    <inertia ixx="0.000607" iyy="0.000525" izz="0.000555" ixy="-0.0" iyz="0.0" ixz="-6.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.00049 0.000227 -0.053152" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/rotate_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.00049 0.000227 -0.053152" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/rotate_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link1_1">
+  <inertial>
+    <origin xyz="-0.008147667775626987 -0.0010986954924051464 0.07000434191025155" rpy="0 0 0"/>
+    <mass value="1.0831804124518591"/>
+    <inertia ixx="0.003389" iyy="0.003241" izz="0.000242" ixy="-1e-06" iyz="-5e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.00265 -0.001031 -0.096702" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.00265 -0.001031 -0.096702" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="end_effector">
+  <inertial>
+    <origin xyz="-0.0018 -0.13 0.3" rpy = "0 0 0"/>
+    <mass value="0.1"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.001" iyz="0.001" ixz="0.001"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0003 -0.0002 -0.31" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.01 0.02 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0003 -0.0002 -0.31" rpy = "0 0 0"/>
+    <geometry>
+      <box size="0.01 0.02 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_base_1">
+  <inertial>
+    <origin xyz="-0.0017949480748237856 -0.12033518453855054 0.2750017785923606" rpy="0 0 0"/>
+    <mass value="0.1980883158048346"/>
+    <inertia ixx="0.000163" iyy="0.000177" izz="2.5e-05" ixy="-0.0" iyz="-1e-05" ixz="-4e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.000226 -0.000703 -0.37182" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/gripper_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.000226 -0.000703 -0.37182" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/gripper_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link3_1">
+  <inertial>
+    <origin xyz="-0.00423661183439995 0.0055092783070706235 0.019646810907749834" rpy="0 0 0"/>
+    <mass value="0.16054869925024692"/>
+    <inertia ixx="4.8e-05" iyy="4e-05" izz="2.3e-05" ixy="0.0" iyz="-0.0" ixz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.013842 0.005101 -0.351704" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.013842 0.005101 -0.351704" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link2_1">
+  <inertial>
+    <origin xyz="0.012972297674821031 -0.06088047213397274 0.045775837477048026" rpy="0 0 0"/>
+    <mass value="0.6306313073359033"/>
+    <inertia ixx="0.00092" iyy="0.00082" izz="0.000167" ixy="-0.0" iyz="-2e-06" ixz="-6e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000382 -0.000958 -0.234625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000382 -0.060958 -0.234625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find five_dof_robot_arm_description)/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 18" type="revolute">
+  <origin xyz="-0.00049 -0.000227 0.053152" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rotate_link_1"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+  <limit upper="6.283185" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 19" type="revolute">
+  <origin xyz="-0.00216 0.001258 0.04355" rpy="0 0 0"/>
+  <parent link="rotate_link_1"/>
+  <child link="link1_1"/>
+  <axis xyz="0.999993 -0.003728 -0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 21" type="revolute">
+  <origin xyz="-0.013616 0.005804 0.020116" rpy="0 0 0"/>
+  <parent link="link3_1"/>
+  <child link="gripper_base_1"/>
+  <axis xyz="0.999892 0.014705 -7e-06"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 34" type="revolute">
+  <origin xyz="0.014224 -0.006059 0.117079" rpy="0 0 0"/>
+  <parent link="link2_1"/>
+  <child link="link3_1"/>
+  <axis xyz="1e-06 0.000375 1.0"/>
+  <limit upper="6.283185" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 35" type="revolute">
+  <origin xyz="0.002268 -0.000073 0.137923" rpy="0 0 0"/>
+  <parent link="link1_1"/>
+  <child link="link2_1"/>
+  <axis xyz="0.999993 -0.003728 -0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="end_effector_joint" type="fixed">
+  <origin xyz="0.001 -0.0001 0.40" rpy="0 0 0"/>
+  <parent link="gripper_base_1"/>
+  <child link="end_effector"/>
+</joint>
+
+</robot>

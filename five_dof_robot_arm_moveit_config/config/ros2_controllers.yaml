@@ -1,0 +1,26 @@
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    five_dof_robot_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+five_dof_robot_arm_controller:
+  ros__parameters:
+    joints:
+      - Revolute 18
+      - Revolute 19
+      - Revolute 35
+      - Revolute 34
+      - Revolute 21
+    command_interfaces:
+      - position
+      - velocity
+    state_interfaces:
+      - position
+      - velocity

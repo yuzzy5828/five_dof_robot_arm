@@ -1,0 +1,27 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: five_dof_robot_arm_description
+    relative_path: urdf/five_dof_robot_arm.xacro
+  srdf:
+    relative_path: config/five_dof_robot_arm.srdf
+  package_settings:
+    author_name: Yujiro Onishi
+    author_email: yujiro5828@gmail.com
+    generated_timestamp: 1723912378
+  control_xacro:
+    command:
+      - position
+      - velocity
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+      - velocity
+    state:
+      - position
+      - velocity
