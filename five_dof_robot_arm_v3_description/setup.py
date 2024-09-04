@@ -2,7 +2,7 @@ from setuptools import setup
 import os
 from glob import glob
 
-package_name = 'five_dof_robot_arm_description'
+package_name = 'five_dof_robot_arm_v3_description'
 
 setup(
     name=package_name,
